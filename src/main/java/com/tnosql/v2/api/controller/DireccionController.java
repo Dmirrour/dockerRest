@@ -17,7 +17,7 @@ public class DireccionController {
      */
     private final DireccionService direccionService;
 
-    @GetMapping("/direccion")
+    @PostMapping("/direccion")
     public void save(@RequestBody Direccion direccion) {
         direccionService.save(direccion);
     }
@@ -25,7 +25,7 @@ public class DireccionController {
     /**
      * recurso para obtener todas las direcciones de una persona
      */
-    @GetMapping("/personas/{ci}")
+    @GetMapping("/direccion/{ci}")
     public List<Direccion> findByCi(@PathVariable String ci) {
         return direccionService.findByCi(ci);
     }
@@ -33,8 +33,14 @@ public class DireccionController {
     /**
      * recurso para obtener domcilios segun criterios
      */
-    @GetMapping("/direccion/{departamento}/{localidad}/{barrio}")
-    public List<Direccion> findByDepartamentoOrLocalidadOrBarrio(@PathVariable String departamento, @PathVariable String localidad, @PathVariable String barrio) {
+
+    @GetMapping("/direccion")
+    public List<Direccion> findByDepartamentoOrLocalidadOrBarrio(@RequestBody Direccion direccion) {
+        String departamento = (direccion.getDepartamento() != null) ? direccion.getDepartamento() : "";
+        String localidad = (direccion.getLocalidad() != null) ? direccion.getLocalidad() : "";
+        String barrio = (direccion.getBarrio() != null) ? direccion.getBarrio() : "";
         return direccionService.findByDepartamentoOrLocalidadOrBarrio(departamento, localidad, barrio);
     }
+
+
 }

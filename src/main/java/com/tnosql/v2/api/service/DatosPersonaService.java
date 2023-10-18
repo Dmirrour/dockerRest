@@ -25,11 +25,12 @@ public class DatosPersonaService {
      * metodo para guardar una persona,
      * luego de comprobar que no existe en la base de datos
      */
-    public void save(DatosPersona datosPersona) {
+    public boolean save(DatosPersona datosPersona) {
         if (!existeCi(datosPersona.getCi())) {
             datosPersonaRepository.save(datosPersona);
+            return true;
         }else {
-            System.out.println("Error 401: Ya existe una persona con ese ci");
+            return false;
         }
     }
 

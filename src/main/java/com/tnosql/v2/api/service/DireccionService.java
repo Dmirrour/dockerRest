@@ -55,4 +55,5 @@ public class DireccionService {
     public List<Direccion> findByDepartamentoOrLocalidadOrBarrio(String departamento, String localidad, String barrio) {
         return direccionRepository.findByDepartamentoOrLocalidadOrBarrio(departamento, localidad, barrio);
     }
+
 }

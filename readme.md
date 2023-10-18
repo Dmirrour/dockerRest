@@ -222,3 +222,9 @@ Segundo laboratorio Bases de Datos NoSql 2023
 ```http
     GET /api/v1/direccion/{criterio}
 ```
+
+{
+"departamento": "Colonia",
+"localidad": "Carrasco",
+"barrio": "Residencial"
+}
