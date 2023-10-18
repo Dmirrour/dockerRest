@@ -33,11 +33,12 @@ public class DireccionService {
      * metodo para guardar una direccion, luego de comprobar que no existe en la base de datos
      * recibe como paremetros una ci y un objeto direccion
      */
-    public void save(Direccion direccion) {
+    public boolean save(Direccion direccion) {
         if (existeCi(direccion.getCi())) {
             direccionRepository.save(direccion);
+            return true;
         } else {
-            System.out.println("Error 402: No existe una persona con ese ci");
+            return false;
         }
     }
 

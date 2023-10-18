@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "6202ef32-f116-4c73-a678-ea6b0bb69801",
+		"name": "NoSQL",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30168908"
+	},
+	"item": [
+		{
+			"name": "AltaPersona",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ci\": \"123456\",\r\n    \"nombre\": \"Elyiquel\",\r\n    \"apellido\": \"Vera\",\r\n    \"edad\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/personas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"personas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "AltaDireccion",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ci\": \"49849465\",\r\n    \"departamento\": \"Colonia2\",\r\n    \"localidad\": \"Coloni Valdence2\",\r\n    \"barrio\": \"1231\",\r\n    \"calle\": \"Av. 18Julio\",\r\n    \"nro\": \"123\",\r\n    \"apartamento\": \"A2\",\r\n    \"padron\": \"5678\",\r\n    \"ruta\": \"R10\",\r\n    \"km\": 5,\r\n    \"letra\": \"B\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/direccion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"direccion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "BuscarDireccionPorCI",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/direccion/51596751",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"direccion",
+						"51596751"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FiltrarDireccion_Json",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"departamento\": \"Colonia\",\r\n    \"localidad\": \"Carrasco\",\r\n    \"barrio\": \"Residencial\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/direccion",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"direccion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FiltrarDireccion_Parametros",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/direccion?departamento=Montevideo&localidad=Carrasco&barrio=1231",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"direccion"
+					],
+					"query": [
+						{
+							"key": "departamento",
+							"value": "Montevideo"
+						},
+						{
+							"key": "localidad",
+							"value": "Carrasco"
+						},
+						{
+							"key": "barrio",
+							"value": "1231"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
